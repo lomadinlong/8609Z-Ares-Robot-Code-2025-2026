@@ -257,21 +257,21 @@ void opcontrol() {
     // . . .
     // Put more user control code here!
     
-    // if (master.get_digital(DIGITAL_L2)) {
-    //   intakebottom.move(127);
-    //   intakebottom2.move(127);
-    //   intakemiddle.move(-127);
-    // }  
-    // else if(master.get_digital(DIGITAL_L1)) {
-    //   intakebottom.move(-127);
-    //   intakebottom2.move(127);
-    //   intakemiddle.move(-127);
-    // }
-    //   else {
-    //   intakebottom.move(0);
-    //   intakebottom2.move(0);
-    //   intakemiddle.move(0);
-    // }
+    if (master.get_digital(DIGITAL_L2)) {
+     intakebottom.move(127);
+     intakebottom2.move(127);
+     intakemiddle.move(-127);
+    }  
+    else if(master.get_digital(DIGITAL_L1)) {
+      intakebottom.move(-127);
+      intakebottom2.move(127);
+      intakemiddle.move(-127);
+    }
+      else {
+      intakebottom.move(0);
+      intakebottom2.move(0);
+      intakemiddle.move(0);
+    }
 
     
     

@@ -270,10 +270,26 @@ void opcontrol() {
       intakebottom2.move(-127);
       intakemiddle.move(127);
     }
-      else {
+    else if (master.get_digital(DIGITAL_R1)) {
+      //Outtake to Middle Goal
+      intakebottom.move(127);
+      intakebottom2.move(127);
+      intakemiddle.move(127);
+      intaketop.move(127);
+    }
+    else if (master.get_digital(DIGITAL_R2)) {
+      //Outtake to Middle Goal
+      intakebottom.move(127);
+      intakebottom2.move(127);
+      intakemiddle.move(127);
+      intaketop.move(-127);
+      intaketop2.move(127);
+    }
+    else {
       intakebottom.move(0);
       intakebottom2.move(0);
       intakemiddle.move(0);
+      intaketop.move(0);
     }
 
     

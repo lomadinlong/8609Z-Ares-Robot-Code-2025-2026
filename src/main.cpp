@@ -298,6 +298,7 @@ if (master.get_digital(DIGITAL_RIGHT)) {
       intakebottom2.move(127);
       intakemiddle.move(127);
       intaketop.move(127);
+      alignerPiston.set(true);
       pros::delay(100);
       if (intakemiddle.get_actual_velocity() < 10) {
         intakemiddle.move(0);
@@ -313,6 +314,7 @@ if (master.get_digital(DIGITAL_RIGHT)) {
       intakemiddle.move(127);
       intaketop.move(-127);
       intaketop2.move(-127);
+      alignerPiston.set(true);
       pros::delay(100);
       if (intakemiddle.get_actual_velocity() < 10) {
         intakemiddle.move(0);
@@ -336,10 +338,10 @@ if (master.get_digital(DIGITAL_RIGHT)) {
       wingPiston.set(false);
     }
     if (master.get_digital(DIGITAL_DOWN)) {
-    //Wing Piston Control
+    //Aligner Piston Control
       alignerPiston.set(true);
     }
-    else {
+    else if (!master.get_digital(DIGITAL_R1) || !master.get_digital(DIGITAL_R2) ) {
       alignerPiston.set(false);
     }
     

@@ -2,7 +2,7 @@
 
 void default_constants();
 
-void auton_vexvr();
+void auton_vexvr();// Auton imported straight from vex vr
 void auton_skills();
 void drive_example();
 void turn_example();

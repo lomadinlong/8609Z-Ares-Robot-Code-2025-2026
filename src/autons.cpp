@@ -52,45 +52,49 @@ void default_constants() {
 // 15 Second autonomous
 ///
 void auton_skills() {
-  chassis.drive_mode_set(ez::DISABLE);
+ chassis.drive_mode_set(ez::DISABLE);
   // 8609Z auton code here!
   // delay code pros::delay(time in ms);
-  
-chassis.pid_drive_set(37_in, 64);
-chassis.pid_wait();
-
-chassis.pid_turn_set(90_deg, 90);
-chassis.pid_wait();
-
-intakebottom.move(127);
-intakebottom2.move(127);
-intakemiddle.move(-127);
-chassis.pid_drive_set(16_in, 48);
-chassis.pid_wait_quick_chain();
-pros::delay(800);
-intakebottom.move(0);
-intakebottom2.move(0);
-chassis.pid_drive_set(-5_in, 48);
-chassis.pid_wait();
-chassis.pid_turn_set(270_deg, 90);
-chassis.pid_wait();
-alignerPiston.set(true);
-pros::delay(500);
-chassis.pid_drive_set(22_in, 96);
-chassis.pid_wait();
-intakebottom.move(127);
-intakebottom2.move(127);
-intakemiddle.move(127);
-intaketop.move(-127);
-intaketop2.move(-127);
-pros::delay(5000);
-intakebottom.move(0);
-intakebottom2.move(0);
-intakemiddle.move(0);
-intaketop.move(0);
-intaketop2.move(0);
-chassis.pid_drive_set(-15_in, 48);
-chassis.pid_wait();
+  alignerPiston.set(false);
+  chassis.pid_drive_set(30_in, 80);
+  chassis.pid_wait();
+  chassis.pid_turn_set(87_deg, 90);
+  chassis.pid_wait();
+  chassis.pid_drive_set(16_in, 48);
+  chassis.pid_wait();
+  intakebottom.move(127);
+  intakebottom2.move(127);
+  intakemiddle.move(-127);
+  pros::delay(1000);
+  chassis.pid_drive_set(-6_in, 48);
+  intakebottom.move(127);
+  intakebottom2.move(-127);
+  intakemiddle.move(127);
+  pros::delay(1500);
+  intakebottom.move(0);
+  intakebottom2.move(0);
+  intakemiddle.move(0);
+  chassis.pid_wait();
+  chassis.pid_turn_set(270_deg, 90);
+  chassis.pid_wait();
+  alignerPiston.set(true);
+  pros::delay(500);
+  chassis.pid_drive_set(22_in, 110);
+  chassis.pid_wait();
+  intakebottom.move(127);
+  intakebottom2.move(127);
+  intakemiddle.move(127);
+  intaketop.move(-127);
+  intaketop2.move(-127);
+  pros::delay(5000);
+  intakebottom.move(0);
+  intakebottom2.move(0);
+  intakemiddle.move(0);
+  intaketop.move(0);
+  intaketop2.move(0);
+  alignerPiston.set(false);
+  chassis.pid_drive_set(-10_in, 48);
+  chassis.pid_wait();
 }
 ///
 // another auton coded in from vex vr
@@ -100,7 +104,7 @@ void auton_vexvr() {
   // 8609Z auton code here!
   // delay code pros::delay(time in ms);
   alignerPiston.set(false);
-  chassis.pid_drive_set(34_in, 110);
+  chassis.pid_drive_set(34_in, 80);
   chassis.pid_wait();
   chassis.pid_turn_set(87_deg, 90);
   chassis.pid_wait();
@@ -113,9 +117,9 @@ void auton_vexvr() {
   intakebottom.move(0);
   intakebottom2.move(0);
   intakemiddle.move(0);
-  chassis.pid_drive_set(-3_in, 48);
+  chassis.pid_drive_set(-6_in, 48);
   chassis.pid_wait();
-  chassis.pid_turn_set(264_deg, 90);
+  chassis.pid_turn_set(266_deg, 90);
   chassis.pid_wait();
   alignerPiston.set(true);
   pros::delay(500);
@@ -141,7 +145,10 @@ void auton_vexvr() {
   chassis.pid_wait();
   chassis.pid_turn_set(90_deg, 90);
   chassis.pid_wait();
-  chassis.pid_drive_set(16_in, 48);
+  intakebottom.move(127);
+  intakebottom2.move(127);
+  intakemiddle.move(-127);
+  chassis.pid_drive_set(23_in, 48);
   chassis.pid_wait();
   intakebottom.move(127);
   intakebottom2.move(127);
@@ -150,10 +157,10 @@ void auton_vexvr() {
   intakebottom.move(0);
   intakebottom2.move(0);
   intakemiddle.move(0);
-  chassis.pid_drive_set(-2_in, 48);
+  chassis.pid_drive_set(-6_in, 48);
   chassis.pid_wait();
   pros::delay(300);
-  chassis.pid_turn_set(270_deg, 90);
+  chassis.pid_turn_set(266_deg, 90);
   chassis.pid_drive_set(22_in, 110);
   chassis.pid_wait();
   alignerPiston.set(true);
@@ -171,13 +178,13 @@ void auton_vexvr() {
   alignerPiston.set(false);
   chassis.pid_drive_set(-17_in, 48);
   chassis.pid_wait();
-  chassis.pid_turn_set(40_deg, 90);
-  chassis.pid_wait();
-  chassis.pid_drive_set(18_in, 48);
-  chassis.pid_wait();
   chassis.pid_turn_set(180_deg, 90);
   chassis.pid_wait();
-  chassis.pid_drive_set(-25_in, 128);
+  chassis.pid_drive_set(-48_in, 48);
+  chassis.pid_wait();
+  chassis.pid_turn_set(270_deg, 90);
+  chassis.pid_wait();
+  chassis.pid_drive_set(-28_in, 128);
   chassis.pid_wait();
   pros::delay(3000);
 }
@@ -191,14 +198,7 @@ void drive_example() {
   // The third parameter is a boolean (true or false) for enabling/disabling a slew at the start of drive motions
   // for slew, only enable it when the drive distance is greater than the slew distance + a few inches
 
-  chassis.pid_drive_set(24_in, DRIVE_SPEED, true);
-  chassis.pid_wait();
-
-  chassis.pid_drive_set(-12_in, DRIVE_SPEED);
-  chassis.pid_wait();
-
-  chassis.pid_drive_set(-12_in, DRIVE_SPEED);
-  chassis.pid_wait();
+  intaketop.move(-50);
 }
 
 ///

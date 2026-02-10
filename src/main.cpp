@@ -271,7 +271,7 @@ if (master.get_digital(DIGITAL_RIGHT)) {
      intakebottom2.move(127);
      intakemiddle.move(-127);
      pros::delay(100);
-     if (intakemiddle.get_actual_velocity() > -10) {
+     if (intakemiddle.get_actual_velocity() > -1) {
         intakemiddle.move(0);
         pros::delay(300);
         intakemiddle.move(-127);
@@ -283,9 +283,9 @@ if (master.get_digital(DIGITAL_RIGHT)) {
       //Outtake to bottom goal
       intakebottom.move(-127);
       intakebottom2.move(-127);
-      intakemiddle.move(127);
+      intakemiddle.move(42);
       pros::delay(100);
-      if (intakemiddle.get_actual_velocity() < 10) {
+      if (intakemiddle.get_actual_velocity() < 1) {
         intakemiddle.move(0);
         pros::delay(300);
         intakemiddle.move(127);
@@ -300,7 +300,7 @@ if (master.get_digital(DIGITAL_RIGHT)) {
       intaketop.move(127);
 
       pros::delay(100);
-      if (intakemiddle.get_actual_velocity() < 10) {
+      if (intakemiddle.get_actual_velocity() < 1) {
         intakemiddle.move(0);
         pros::delay(300);
         intakemiddle.move(127);
@@ -316,7 +316,8 @@ if (master.get_digital(DIGITAL_RIGHT)) {
       intaketop2.move(-127);
       alignerPiston.set(true);
       pros::delay(100);
-      if (intakemiddle.get_actual_velocity() < 10) {
+      if (intakemiddle.get_actual_velocity() < 1) {
+        pros::delay(300);
         intakemiddle.move(0);
         pros::delay(300);
         intakemiddle.move(127);

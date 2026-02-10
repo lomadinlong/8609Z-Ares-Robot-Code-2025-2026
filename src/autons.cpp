@@ -104,7 +104,7 @@ void auton_vexvr() {
   // 8609Z auton code here!
   // delay code pros::delay(time in ms);
   alignerPiston.set(false);
-  chassis.pid_drive_set(34_in, 80);
+  chassis.pid_drive_set(32_in, 80);
   chassis.pid_wait();
   chassis.pid_turn_set(87_deg, 90);
   chassis.pid_wait();
@@ -141,7 +141,7 @@ void auton_vexvr() {
   chassis.pid_wait();
   chassis.pid_turn_set(180_deg, 90);
   chassis.pid_wait();
-  chassis.pid_drive_set(97_in, 110);
+  chassis.pid_drive_set(99_in, 110);
   chassis.pid_wait();
   chassis.pid_turn_set(90_deg, 90);
   chassis.pid_wait();
@@ -161,6 +161,7 @@ void auton_vexvr() {
   chassis.pid_wait();
   pros::delay(300);
   chassis.pid_turn_set(266_deg, 90);
+  chassis.pid_wait();
   chassis.pid_drive_set(22_in, 110);
   chassis.pid_wait();
   alignerPiston.set(true);
@@ -176,7 +177,7 @@ void auton_vexvr() {
   intaketop.move(0);
   intaketop2.move(0);
   alignerPiston.set(false);
-  chassis.pid_drive_set(-17_in, 48);
+  chassis.pid_drive_set(-11_in, 48);
   chassis.pid_wait();
   chassis.pid_turn_set(180_deg, 90);
   chassis.pid_wait();
@@ -184,6 +185,9 @@ void auton_vexvr() {
   chassis.pid_wait();
   chassis.pid_turn_set(270_deg, 90);
   chassis.pid_wait();
+  chassis.pid_drive_set(8_in, 80);
+  chassis.pid_wait();
+  pros::delay(500);
   chassis.pid_drive_set(-28_in, 128);
   chassis.pid_wait();
   pros::delay(3000);
@@ -199,6 +203,7 @@ void drive_example() {
   // for slew, only enable it when the drive distance is greater than the slew distance + a few inches
 
   intaketop.move(-50);
+  pros::delay(1000);
 }
 
 ///

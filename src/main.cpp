@@ -58,10 +58,11 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
-      {"Skills\n\nSkills auton", auton_skills},
-      {"VEX VR\n\nAuton imported from Vex VR", auton_vexvr},
-      {"Drive\n\nDrive forward and come back", drive_example},
+      {"15S Auto Right\n\nRight Side Auton For Qualifier Rounds", auton_skills},
+      {"Skills\n\nVEX Skills auton", auton_vexvr},
+      {"15 Point Skills Auton\n\nSpin top of intake to get 15 points", drive_example},
       {"Turn\n\nTurn 3 times.", turn_example},
+      {"Drive Forward\n\nDrive forward a few inches to not stay touching parking zone for alliance if solo awp", DF},
       {"Drive and Turn\n\nDrive forward, turn, come back", drive_and_turn},
       {"Drive and Turn\n\nSlow down during drive", wait_until_change_speed},
       {"Swing Turn\n\nSwing in an 'S' curve", swing_example},

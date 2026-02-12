@@ -147,7 +147,7 @@ void auton_skills() {
 ///
 // another auton coded in from vex vr
 ///
-void auton_vexvr() {
+void auton_15s() {
   chassis.drive_mode_set(ez::DISABLE);
   // 8609Z auton code here!
   // delay code pros::delay(time in ms);

@@ -58,8 +58,8 @@ void initialize() {
 
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.autons_add({
-      {"15S Auto Right\n\nRight Side Auton For Qualifier Rounds", auton_skills},
-      {"Skills\n\nVEX Skills auton", auton_vexvr},
+      {"Skills\n\nVEX Skills auton", auton_skills},
+      {"15S Auto Right\n\nRight Side Auton For Qualifier Rounds", auton_15s},
       {"15 Point Skills Auton\n\nSpin top of intake to get 15 points", drive_example},
       {"Turn\n\nTurn 3 times.", turn_example},
       {"Drive Forward\n\nDrive forward a few inches to not stay touching parking zone for alliance if solo awp", DF},
